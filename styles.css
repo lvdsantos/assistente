@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://img.freepik.com/free-photo/view-modern-classroom-school_23-2150911443.jpg?t=st=1724358634~exp=1724362234~hmac=25e99f4ce6e8571887056c905a11733206908f8e23bc5a71673912d5f499bba5&w=900') no-repeat center center fixed; /* Adiciona a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0 10px; /* Adiciona espaçamento nas bordas em telas menores */
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com transparência */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.gcse-search {
+    margin-top: 20px;
+}
+
+#volume-toggle {
+    margin-top: 0px;
+    padding: 0px 0px;
+    font-size: 0px;
+    cursor: pointer;
+}
+
+/* Oculta o iframe do YouTube */
+#background-music {
+    display: none;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+        max-width: 100%; /* Ocupa a largura total em telas pequenas */
+    }
+
+    .title {
+        font-size: 20px; /* Reduz o tamanho do título em telas pequenas */
+    }
+
+    .logo {
+        max-width: 120px; /* Reduz o tamanho da logo em telas pequenas */
+    }
+}

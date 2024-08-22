@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente Virtual</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Código do Custom Search Engine -->
+    <script async src="https://cse.google.com/cse.js?cx=90c7466f0a2704e2c"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="https://ints.org.br/wp-content/uploads/2019/12/logotipo.png" alt="Logo" class="logo"> <!-- Adicione sua logo aqui -->
+        <h1 class="title">Olá, Como posso te ajudar?</h1>
+        <div class="gcse-search"></div> <!-- Campo de pesquisa Google -->
+        <button id="volume-toggle">Desmutar</button>
+    </div>
+
+    <!-- Música de fundo do YouTube -->
+    <iframe id="background-music" src="https://www.youtube.com/embed/qMDdvpX_QGs?autoplay=1&loop=1&playlist=qMDdvpX_QGs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <script>
+        // Inicialmente mudo
+        window.addEventListener('load', () => {
+            const iframe = document.getElementById('background-music');
+            iframe.contentWindow.postMessage('{"event":"command","func":"mute","args":""}', '*');
+        });
+
+        // Controle de volume
+        const volumeButton = document.getElementById('volume-toggle');
+        let muted = true;
+
+        volumeButton.addEventListener('click', () => {
+            muted = !muted;
+            const command = muted ? 'mute' : 'unMute';
+            document.getElementById('background-music').contentWindow.postMessage(`{"event":"command","func":"${command}","args":""}`, '*');
+            volumeButton.textContent = muted ? 'Desmutar' : 'Silenciar';
+        });
+    </script>
+</body>
+</html>
